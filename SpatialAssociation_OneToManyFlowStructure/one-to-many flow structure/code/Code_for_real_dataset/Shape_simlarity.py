@@ -103,11 +103,13 @@ all_loc_list = cityId_loc_dict.values()
 
 
 
-
+# Utilizing migration flow data, measure the shape similarity of structural patterns between the outflow network and the inflow network for a node.
 move_in_out_pearson_sim_fun()
 
+# Utilizing attention flow data, measure the shape similarity of structural patterns between the outflow network and the inflow network for a node.
 attention_in_out_pearson_sim_fun()
 
+# Utilizing migration flow and attention flow data, measure the shape similarity of structural patterns between the attention flow network and the migration flow network for a node.
 attention_move_pearson_sim_fun()
 
 

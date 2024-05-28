@@ -74,9 +74,10 @@ cityId_loc_dict, cityId_city_dict, city_cityId_dict = tools.get_city_information
 # 获取所有点的坐标集合
 all_loc_list = cityId_loc_dict.values()
 
-
+# Utilizing migration flow data, measure the value similarity of structural patterns between the outflow network and the inflow network for a node.
 move_in_out_DTW_sim_fun()
 
+# Utilizing attentioin flow data, measure the value similarity of structural patterns between the outflow network and the inflow network for a node.
 attention_in_out_DTW_sim_fun()
 
 

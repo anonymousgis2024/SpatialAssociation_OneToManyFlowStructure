@@ -64,10 +64,10 @@ def read_attention_move_file(city_num):
 
 
 
-# Compare the value similarity of migration flow intensity between June and July
+# Compare the value similarity of migration flow strength between June and July
 def move_jun_jul_strength_sim_fun(jun_move_array, jul_move_array):
     with open("../../result/value_similarity_results/Migration_flow_June_July_strength_value_similarity.csv", 'w') as fw:
-        fw.write("Similar cities, longitude, latitude, DTW distance (intensity), p-value\n")
+        fw.write("Similar cities, longitude, latitude, DTW distance (strength), p-value\n")
         for i in range(city_num):
             # Smooth the curves for June and July migration flow using Savitzky-Golay filter
             smooth_attention_curve1 = tools.sg_smooth(jun_move_array[i])
@@ -83,7 +83,7 @@ def move_jun_jul_strength_sim_fun(jun_move_array, jul_move_array):
             # Write the information and calculated values to the file
             fw.write(info + "," + str(DTW_distance) + "," + str(p_value) + "\n")
 
-# Write the flow intensity data for June and July to separate files
+# Write the flow strength data for June and July to separate files
 def write_move_two_month_strength_fun(jun_move_array, cityId_loc_dict, cityId_city_dict):
     with open("../../dataset/real_dataset/migration_flow_strength_June.csv", 'w') as fw:
         fw.write("ocity,ox,oy,dcity,dx,dy,strength(%%)\n")
@@ -116,10 +116,10 @@ attention_array, move_array = read_attention_move_file(city_num)
 
 # Read migration flow data for June and July to compare their value similarities
 jun_move_array, jul_move_array = read_move_two_month_DTW_sim_fun(city_cityId_dict)
-# Write the flow intensity data for June and July to files
+# Write the flow strength data for June and July to files
 write_move_two_month_strength_fun(jun_move_array, cityId_loc_dict, cityId_city_dict)
 
-# Compare the value similarity of migration flow intensity between June and July
+# Compare the value similarity of migration flow strength between June and July
 move_jun_jul_strength_sim_fun(jun_move_array, jul_move_array)
 
 
