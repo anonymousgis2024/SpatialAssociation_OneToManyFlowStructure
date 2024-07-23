@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from tslearn.metrics import dtw
 from scipy.signal import savgol_filter
 
-# Smooth the data using Savitzky-Golay filter
+# Smooth the data using the Savitzky-Golay filter
 def sg_smooth(data, window_length=11, polyorder=3):
     """
     Parameters:
