@@ -6,7 +6,7 @@ import matplotlib
 
 
 # Read attention flow and migration flow files to create matrices for both flows
-# city_num: the number of cities, used to determine the matrix size
+# city_num: the number of cities, used to determine the size of matrix
 def read_attention_move_file(city_num):
     # --------------------- Read attention flow file and create the flow matrix -----------------------
     attention_array = np.zeros((city_num, city_num))
